@@ -1,0 +1,55 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: laravel
+          MYSQL_USER: laraveluser
+          MYSQL_PASSWORD: laravelpassword
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd "mysqladmin ping -h localhost" 
+          --health-interval 10s 
+          --health-timeout 5s 
+          --health-retries 5
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+
+    - name: Build API image
+      run: |
+        docker build -t tarek910/raya-api:latest ./api
+
+    - name: Build Client image
+      run: |
+        docker build -t tarek910/raya-client:latest ./client
+
+    - name: Log in to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: tarek910
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+
+    - name: Push API image
+      run: |
+        docker push tarek910/raya-api:latest:latest
+
+    - name: Push Client image
+      run: |
+        docker push tarek910/raya-client:latest:latest
+
