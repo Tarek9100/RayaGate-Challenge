@@ -47,9 +47,9 @@ jobs:
 
     - name: Push API image
       run: |
-        docker push tarek910/raya-api:latest:latest
+        docker push tarek910/raya-api:latest
 
     - name: Push Client image
       run: |
-        docker push tarek910/raya-client:latest:latest
+        docker push tarek910/raya-client:latest
 
