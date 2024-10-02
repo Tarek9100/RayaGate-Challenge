@@ -36,3 +36,7 @@ In the client directory, create a .env file.
 
 ## CI/CD Pipeline
 This project includes a CI/CD pipeline using GitHub Actions that builds Docker images and pushes them to Docker Hub.
+
+
+## Application Screenshot
+![Nuxt.js Application](path_to_your_screenshot/Image.png)
