@@ -1,27 +1,17 @@
-# Challenge
 
-## Overview
+# Rayagate Challenge
 
-This repository contains a simple web application with two main components:
+## Description
+ This repository contains a multi-service application built using Docker, Laravel (API), and Nuxt.js (Client), orchestrated by Nginx. The API connects to a MySQL database, while the Client is served through Nginx, supporting HTTPS via a self-signed certificate.
 
-1. **API**: Written in Laravel PHP, the API serves as the backend for the application and listens on port 8000.
-2. **Client**: Developed using Nuxt.js, the client is the frontend of the application and listens on port 3000.
+## Prerequisites
+- Docker
+- Docker Compose
 
-### Environment Variables
+## Setup Instructions
 
-- **API Directory**: Take a look at the `.env` file in the API directory. It should contain the necessary credentials to connect to the database.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/your_username/your_repository.git
+   cd your_repository
 
-  ```env
-    DB_CONNECTION=mysql
-    DB_HOST=db
-    DB_PORT=3306
-    DB_DATABASE=bookapi
-    DB_USERNAME=app
-    DB_PASSWORD=password
-  ```
-
-- **Client Directory**: Check the `.env` file in the Client directory. It should contain the connection string to connect to the API.
-
-  ```env
-    VITE_API_URL=http://api:8000
-  ```
