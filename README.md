@@ -12,8 +12,8 @@
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your_username/your_repository.git
-   cd your_repository
+   git clone https://github.com/Tarek9100/RayaGate-Challenge.git
+   cd RayaGate-Challenge
 
 2. **Create .env Files**:
 
