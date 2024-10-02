@@ -39,4 +39,4 @@ This project includes a CI/CD pipeline using GitHub Actions that builds Docker i
 
 
 ## Application Screenshot
-![Nuxt.js Application](path_to_your_screenshot/Image.png)
+![Nuxt.js Application](screenshots/Image.png)
