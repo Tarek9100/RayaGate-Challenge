@@ -34,5 +34,5 @@ In the client directory, create a .env file.
    Client: http://localhost:80
    API: http://localhost:9000/api
 
-# CI/CD Pipeline
+## CI/CD Pipeline
 This project includes a CI/CD pipeline using GitHub Actions that builds Docker images and pushes them to Docker Hub.
